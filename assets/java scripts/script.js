@@ -2,14 +2,20 @@
 $(function () {
 
 //Created variables for time and handling the hour
-var today = dayjs();
+
+
+// Sets time interval
+function clockTick(){
+
+  today = dayjs();
+  $('#currentDay').text(today.format('MMM D, YYYY, h:mm:ss a'));
+
+}
+setInterval (clockTick, 1000);
+
+// loop function to go through each id "hour-x". Starts at the 9th hour and ends at the 17th hour.
 var currentHr = dayjs().hour();
 
-$('#currentDay').text(today.format('MMM D, YYYY, h:mm a'));
-
-currentHr = dayjs().hour();
-
-// loop function to go through each id "hour-x"
 for (let i=9; i<18; i++) {
 
   var dayHr = i;
