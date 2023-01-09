@@ -14,21 +14,21 @@ for (let i=9; i<17; i++) {
 
   var dayHr = i;
   var idHr ="#hour-" + dayHr;
-  var saveButtonEl = document.querySelector(idHr);
-  var count = localStorage.getItem('Schedule '+i);
+  var saveButtonEl = document.querySelector(idHr);  
+  var userTextInput = localStorage.getItem('Schedule '+i);
 
-  document.querySelector("#text-"+i).textContent = count;
+  document.querySelector("#text-"+i).textContent = userTextInput;
 
   saveButtonEl.addEventListener("click", function(event) {
     event.preventDefault();
-
+    //assigned id "#text-x" to HTML
     var getHr = ("#text-"+i)
     var schedInput = $(getHr).val();
 
     localStorage.setItem('Schedule '+i,schedInput);
  
   }); 
-
+//if functions comparing the current hour with id="hour-x" then sets the class
 if (dayHr===currentHr) {
 
   $(idHr).addClass("row time-block present");
