@@ -10,7 +10,7 @@ $('#currentDay').text(today.format('MMM D, YYYY, h:mm a'));
 currentHr = dayjs().hour();
 
 // loop function to go through each id "hour-x"
-for (let i=9; i<17; i++) {
+for (let i=9; i<18; i++) {
 
   var dayHr = i;
   var idHr ="#hour-" + dayHr;
