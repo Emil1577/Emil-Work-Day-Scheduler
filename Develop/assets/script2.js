@@ -20,3 +20,9 @@ function futureHr() {
     $("#"+hrIdEl).addClass("row time-block past");
     
   }
+
+  var sched = document.querySelector(idHr.value);
+
+  localStorage.setItem(idHr, sched);
+
+  console.log(sched);

@@ -5,53 +5,81 @@ $(function () {
 
   // TODO: Add a listener for click events on the save button. This code should
     // use the id in the containing time-block as a key to save the user input in
-  var saveButtonEl = $('#save');
+  
 
-
+//We use addEventListener() on the signUpButton and listen for a click event. We prevent the browser's default action using event.preventDefault()
 
   // local storage. HINT: What does `this` reference in the click listener
 
 
-  // function? How can DOM traversal be used to get the "hour-x" id of the
+// Below is the DOM for date and time
+
+
 var today = dayjs();
 var currentHr = dayjs().hour();
 
-//$('#currentDay').text(today.format('MMM D, YYYY, h:mm a'));
+$('#currentDay').text(today.format('MMM D, YYYY, h:mm a'));
+
+
+// Below is the code to get the current hour and compare the hour with the id on the html and add the class to it's id to change the format.
 
 currentHr = dayjs().hour();
-console.log(currentHr);
-
-
 
 
 
 for (let i=9; i<17; i++) {
 
- var dayHr = i;
+  var dayHr = i;
+  var idHr ="#hour-" + dayHr;
+  var saveButtonEl = document.querySelector(idHr);
 
-  var idHr ="hour-" + dayHr;
 
-  console.log(idHr);
+  saveButtonEl.addEventListener("click", function(event) {
+
+    event.preventDefault();
+    var getHr = ("#text-"+i)
+    var count = document.querySelector(getHr);
+
+
+    console.log(getHr); 
+
+    var count = localStorage.getItem('Schedule '+i);
+    //const sched = localStorage.getItem('#hour-9');
+    var sched = $(getHr).val();
+    console.log(sched);
+
+    
+    document.querySelector("#text-"+i).textContent = count;
+    localStorage.setItem('Schedule '+i,sched);
+    console.log (count)
+ 
+  }); 
+
+  
+  
+function render(){
+
+  counsole.log("hello");
+  
+}
 
 if (dayHr===currentHr) {
 
-  $("#"+idHr).addClass("row time-block future");
+  $(idHr).addClass("row time-block present");
 
 } else if (dayHr < currentHr)  { 
 
-  $("#"+idHr).addClass("row time-block present");
+  $(idHr).addClass("row time-block past");
+
 } else {
-  console.log("yes");
-  $("#"+idHr).addClass("row time-block past");
+
+  $(idHr).addClass("row time-block future");
+
 }
+
+
+
 }
-
-
-
-const hh = $('#hour-9');
-
-console.log (hh);
-
 
 
 
