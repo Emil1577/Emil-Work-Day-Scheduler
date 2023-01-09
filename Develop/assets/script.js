@@ -18,21 +18,11 @@ var currentHr = dayjs().hour();
 
 //$('#currentDay').text(today.format('MMM D, YYYY, h:mm a'));
 
-currentHr =11
+currentHr = dayjs().hour();
 console.log(currentHr);
 
 
-/// getting the right colors
-var idHr ="hour-"+10;
 
-var hrIdEl = ("#"+document.getElementById(idHr).id);
-
-$(hrIdEl).addClass("row time-block past");
-
-
-console.log(hrIdEl);
-
-//
 
 
 for (let i=9; i<17; i++) {
