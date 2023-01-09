@@ -1,8 +1,8 @@
-# Quiz-Project
+# Work Day Scheduler
 
 ## Decription
 
-This JavaScript Code Quiz Project.  There are 5 multiple choice questions. You will be given 60 seconds to complete the test.  The timer will continue if your answer is correct. If incorrect answer or none is selected, the timer will reduce your time by 10 seconds. Your score will be based on the time remaining.  The more time left the higher your score is.  Your scores will appear after all questions are rendered and answered. You will be ask to enter your name.  If you make it to top 5 highest scores, your name will appear in the High Scores list.  High Scores list appear right after you enter your name.  Good luck and have fun!
+This JavaScript Code Emil Work Day Scheduler.  You will be given 9 scheduling.  The timer will continue if your answer is correct. If incorrect answer or none is selected, the timer will reduce your time by 10 seconds. Your score will be based on the time remaining.  The more time left the higher your score is.  Your scores will appear after all questions are rendered and answered. You will be ask to enter your name.  If you make it to top 5 highest scores, your name will appear in the High Scores list.  High Scores list appear right after you enter your name.  Good luck and have fun!
 
 Here is the link to my game.  Feel free to share with your friends and family.
 
