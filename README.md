@@ -6,15 +6,15 @@ This JavaScript Code Emil Work Day Scheduler.  You will be given 9 per hour time
 
 Here is the link to my game.  Feel free to share with your friends and family.
 
-[https://emil1577.github.io/Quiz-Project](https://emil1577.github.io/Emil-Work-Day-Scheduler/)
+[https://emil1577.github.io/Emil-Work-Day-Scheduler](https://emil1577.github.io/Emil-Work-Day-Scheduler/)
 
 
 ## Table Of Contents
 
 1: [Webpage Screenshot](https://github.com/Emil1577/Quiz-Project/blob/main/README.md#webpage-screenshots)
-2: [Code Snippets](https://github.com/Emil1577/Quiz-Project/blob/main/README.md#code-snippets)](https://github.com/Emil1577/Emil-Work-Day-Scheduler/blob/main/README.md#code-snippets)
-3: [How to Play Instructions:](https://github.com/Emil1577/Quiz-Project/blob/main/README.md#how-to-play-instructions)
-4: [My Contact Information](https://github.com/Emil1577/Quiz-Project/blob/main/README.md#my-contact-information)
+2: [Code Snippets](https://github.com/Emil1577/Emil-Work-Day-Scheduler/blob/main/README.md#code-snippets)
+3: [How to Play Instructions:](https://github.com/Emil1577/Emil-Work-Day-Scheduler/blob/main/README.md#how-to-play-instructions)
+4: [My Contact Information](https://github.com/Emil1577/Emil-Work-Day-Scheduler/blob/main/README.md#my-contact-information)
 
 ## Webpage Screenshots:
 
