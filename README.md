@@ -13,7 +13,7 @@ Here is the link to my game.  Feel free to share with your friends and family.
 
 1: [Webpage Screenshot](https://github.com/Emil1577/Emil-Work-Day-Scheduler/blob/main/README.md#webpage-screenshots)
 2: [Code Snippets](https://github.com/Emil1577/Emil-Work-Day-Scheduler/blob/main/README.md#code-snippets)
-3: [How to Play Instructions:](https://github.com/Emil1577/Emil-Work-Day-Scheduler/blob/main/README.md#how-to-play-instructions)
+3: [How to use:](https://github.com/Emil1577/Emil-Work-Day-Scheduler/blob/main/README.md#how-to-use)
 4: [My Contact Information](https://github.com/Emil1577/Emil-Work-Day-Scheduler/blob/main/README.md#my-contact-information)
 
 ## Webpage Screenshots:
