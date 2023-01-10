@@ -2,185 +2,94 @@
 
 ## Decription
 
-This JavaScript Code Emil Work Day Scheduler.  You will be given 9 scheduling.  The timer will continue if your answer is correct. If incorrect answer or none is selected, the timer will reduce your time by 10 seconds. Your score will be based on the time remaining.  The more time left the higher your score is.  Your scores will appear after all questions are rendered and answered. You will be ask to enter your name.  If you make it to top 5 highest scores, your name will appear in the High Scores list.  High Scores list appear right after you enter your name.  Good luck and have fun!
+This JavaScript Code Emil Work Day Scheduler.  You will be given 9 per hour time slot to enter your schedule for specific time hour.  Click the "save" button on the right to save. Your saved schedules will be save until you delete them.  Deleting the content requires you to hit the "save" button too.  Each hour are designated with a background.  Gray for the past hour, Red for the current hour and green to the future hour.  I hope you enjoy this project. Good luck and have fun!
 
 Here is the link to my game.  Feel free to share with your friends and family.
 
-https://emil1577.github.io/Quiz-Project
+[https://emil1577.github.io/Emil-Work-Day-Scheduler](https://emil1577.github.io/Emil-Work-Day-Scheduler/)
 
 
 ## Table Of Contents
 
-1: [Webpage Screenshot](https://github.com/Emil1577/Quiz-Project/blob/main/README.md#webpage-screenshots)
-2: [Code Snippets](https://github.com/Emil1577/Quiz-Project/blob/main/README.md#code-snippets)
-3: [How to Play Instructions:](https://github.com/Emil1577/Quiz-Project/blob/main/README.md#how-to-play-instructions)
-4: [My Contact Information](https://github.com/Emil1577/Quiz-Project/blob/main/README.md#my-contact-information)
+1: [Webpage Screenshot](https://github.com/Emil1577/Emil-Work-Day-Scheduler/blob/main/README.md#webpage-screenshots)
+2: [Code Snippets](https://github.com/Emil1577/Emil-Work-Day-Scheduler/blob/main/README.md#code-snippets)
+3: [How to use:](https://github.com/Emil1577/Emil-Work-Day-Scheduler/blob/main/README.md#how-to-use)
+4: [My Contact Information](https://github.com/Emil1577/Emil-Work-Day-Scheduler/blob/main/README.md#my-contact-information)
 
 ## Webpage Screenshots:
 
-<img width="1129" alt="Screen Shot 2023-01-05 at 7 23 25 PM" src="https://user-images.githubusercontent.com/119825000/210923698-cf7416b4-40a3-4b14-8244-2d2dac402117.png">
+https://user-images.githubusercontent.com/119825000/211442665-6d07abd3-8231-4d08-98c5-f1cd2102f104.mov
 
-<img width="1129" alt="Screen Shot 2023-01-05 at 7 46 06 PM" src="https://user-images.githubusercontent.com/119825000/210925981-1a2f73fe-4c7d-4a4d-bb19-7d4d5f67497c.png">
+## Code Snippets: 
 
-<img width="1129" alt="Screen Shot 2023-01-05 at 7 23 15 PM" src="https://user-images.githubusercontent.com/119825000/210923968-e2714648-580a-4670-a0c0-2826c3c00b6d.png">
+### Function to set time
 
+    function clockTick(){
 
-## Code Snippets:
+      today = dayjs();
+      $('#currentDay').text(today.format('MMM D, YYYY, h:mm:ss a'));
 
-### Variables to Start the Quiz Game
-
-    var startBtn = document.querySelector("#Start");
-    var playAgainBtn = document.querySelector("#playAgain");  
-    var timer = document.querySelector("#quiz-title");
-
-    startBtn.addEventListener("click", startgame);
-    playAgainBtn.addEventListener("click", playAgain);
+    }
+    setInterval (clockTick, 1000);
     
-### Functions to Start and End the game
+### For loop and functions to activate button to store text values and get text values in the local storage.
 
-    function startgame() {
-      timerStarts();
-      startquiz();
-      initialStart();
-      getquiz();
-    }
-    //setting timer and how to reduce
+    for (let i=9; i<18; i++) {
 
-    function initialStart () {
-        startBtn.setAttribute("hidden","hidden");
-        document.getElementById("submit").style.visibility = "visible";
-        document.getElementById("quiz").style.visibility = "visible";  
-    }
+      var dayHr = i;
+      var idHr ="#hour-" + dayHr;
+      var saveButtonEl = document.querySelector(idHr);  
+      var userTextInput = localStorage.getItem('Schedule '+i);
 
-    function endQuiz () {
-      startBtn.setAttribute("visible","visible");
-      document.getElementById("submit").style.visibility = "hidden";
-      document.getElementById("quiz").style.visibility = "hidden";
-      document.getElementById("playAgain").style.visibility = "visible";
-      logUserAndScore ()
-      stopTimer()
-    }
+      document.querySelector("#text-"+i).textContent = userTextInput;
 
-    function playAgain () {
-      location.reload();
-    }
+      saveButtonEl.addEventListener("click", function(event) {
+        event.preventDefault();
+        //assigned id "#text-x" to HTML
+        var getHr = ("#text-"+i)
+        var schedInput = $(getHr).val();
 
-### Timer functions and deduct timer function.  Two separate functions so I can easily restart the timer and deduct time.
+        localStorage.setItem('Schedule '+i,schedInput);
 
-    var secondsLeft = 60;
-    var timerInterval =("");
+      }); 
 
-    function timerStarts() {
-        timerInterval = setInterval (function() {
-            secondsLeft--;
-            timer.textContent = secondsLeft + " left";
-            if(secondsLeft <= 0) {
-              endQuiz();
-            }
-        },1000);
+### If function to compare the current hour with the hour in each schedule.  It also changes the color of each schedule.  Still using the For loops above.
+
+
+    if (dayHr===currentHr) {
+
+      $(idHr).addClass("row time-block present");
+
+    } else if (dayHr < currentHr)  { 
+
+      $(idHr).addClass("row time-block past");
+
+    } else {
+
+      $(idHr).addClass("row time-block future");
+
     }
 
-    function stopTimer () {
-      clearInterval(timerInterval);
-      timer.textContent = ("QUIZ ENDS");
-    }
+### Edit the Index.html file, deleted the class on the "hour-x" Id and added class="text-x" on the textarea.
 
-    // startTimer.textContent = "Time Reduced";
-    function deductTime () {
-        secondsLeft = secondsLeft - 10;
-    } 
+      <div id="hour-9" class=""> 
+        <div class="col-2 col-md-1 hour text-center py-3">9AM</span></div>
+        <textarea id="text-9" class="col-8 col-md-10 description" rows="3"> </textarea>
+        <button class="btn saveBtn col-2 col-md-1" aria-label="save">
+          <i class="fas fa-save" aria-hidden="true"></i>
+        </button>
+      </div>
+   
 
-### function to start quiz and conditions when correct or wrong answer is selected.
+## How to use:
 
-    function deselectans() {
-      all_answer.forEach((el) => {
-        el.checked = false;
-      });
-    }
-    //load the quiz data
-    function getquiz() {
-      deselectans();
-      question.innerText = quizData[index].question;
-      a.innerText = quizData[index].a;
-      b.innerText = quizData[index].b;
-      c.innerText = quizData[index].c;
-    }
-
-    //move forward the quiz
-    function startquiz() {
-        btn.addEventListener('click', () => {
-        let ans = getSelected();
-
-        if(ans===undefined){
-          timer.textContent = "No Answer";
-          deductTime();
-        }
-        else if (ans) {
-          if (ans == quizData[index].correct) {
-            score++;
-            timer.textContent = "Correct";
-          }
-          else{
-            timer.textContent = "Wrong";
-            deductTime();
-          }
-        }
-        console.log(ans);
-        index++
-        if (index < quizData.length) {
-          getquiz();
-        } 
-        else  {
-          endQuiz();
-          }
-        })
-    }
-    
-### Function to store players and show high scores:
-    
-    ///function to log username and scores
-    function logUserAndScore () {
-        alert("Your score is: " + secondsLeft); 
-        var players = prompt ("Enter your name"); 
-        console.log(players);
-        player = players;
-        showHighScores();
-    }
-
-    //function for the high scores
-
-    function showHighScores(){
-      //variables to save to storage
-    var result = {userName: player, score: secondsLeft}
-    var savedScores = localStorage.getItem("highscore") || '[]' // get the score, or the initial value if empty
-    var highscores = [...JSON.parse(savedScores), result] // add the result
-    // constant to store scores in ascending order
-
-    console.log (result);
-      highscores.sort((a, b) => b.score- a.score) // sort descending
-      highscores.splice(5) // take highest 5
-    localStorage.setItem("highscore", JSON.stringify(highscores)) // store the scores
-
-    //rendering high scores
-    results.innerHTML = "High Scores:" +
-
-      highscores
-      .map (score => {
-      return `<p class="high-score">${score.userName} : ${score.score} points</p>`;
-      }) 
-      .join ("");
-    }
-
-## How to Play Instructions:
-
-The link of the webpage is: https://emil1577.github.io/Quiz-Project/
+The link of the webpage is: https://emil1577.github.io/Emil-Work-Day-Scheduler
 
     Step 1 :Welcome homepage.
-    Step 2 :Click on the "Click here to begin" button to start the quiz and the timer.  It will then show you the first questions.
-    Step 3 :Choose one from the three choices of possible answers and hit the "Submit" button. The display timer will change it's text to "Correct", "Wrong" or "No Answer".  Depending on your answer.  Then it will show you the next question.
-    Step 4 :When all questions are presented and answered, you will be prompted with your score and will ask you to write your name. 
-    Step 5 :After submitting your name, Top 5 High Scores will be displayed. 
-    Step 6 :"Play Again" button will also appear.  If you hit this button, it will bring you back to the initial webpage.
+    Step 2 :Go to the alloted text area on which time you wanted to save a schedule.  Click on the "save" button to save.  Each schedule has it's own button.  Make sure you are hitting the corresponding button.
+    Step 3 :To delete and edit the save schedule.  Go to the text area then edit or clear the text then hit the corresponding "save" button.  Even when you clear the text area, without hitting the "save" button, it will still not save.
+    Step 4 :Each schedule will change it's color depending on the time.  If the hour past the background color will be gray, if present it will be red and for future it is green.
+    Step 5 : You can go back to your schedule anytime.  It will only change when you make some changes.
 
 ## My Contact Information:
 
