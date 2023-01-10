@@ -18,11 +18,7 @@ Here is the link to my game.  Feel free to share with your friends and family.
 
 ## Webpage Screenshots:
 
-<img width="1129" alt="Screen Shot 2023-01-05 at 7 23 25 PM" src="https://user-images.githubusercontent.com/119825000/210923698-cf7416b4-40a3-4b14-8244-2d2dac402117.png">
-
-<img width="1129" alt="Screen Shot 2023-01-05 at 7 46 06 PM" src="https://user-images.githubusercontent.com/119825000/210925981-1a2f73fe-4c7d-4a4d-bb19-7d4d5f67497c.png">
-
-<img width="1129" alt="Screen Shot 2023-01-05 at 7 23 15 PM" src="https://user-images.githubusercontent.com/119825000/210923968-e2714648-580a-4670-a0c0-2826c3c00b6d.png">
+https://user-images.githubusercontent.com/119825000/211442502-d4375d37-cc83-464e-9185-9624347bb616.mov
 
 ## Code Snippets: 
 
