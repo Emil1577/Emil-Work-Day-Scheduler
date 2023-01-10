@@ -24,8 +24,7 @@ Here is the link to my game.  Feel free to share with your friends and family.
 
 <img width="1129" alt="Screen Shot 2023-01-05 at 7 23 15 PM" src="https://user-images.githubusercontent.com/119825000/210923968-e2714648-580a-4670-a0c0-2826c3c00b6d.png">
 
-
-## Code Snippets:
+## Code Snippets: 
 
 ### Function to set time
 
