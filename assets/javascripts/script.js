@@ -34,6 +34,7 @@ for (let i=9; i<18; i++) {
     localStorage.setItem('Schedule '+i,schedInput);
  
   }); 
+  
 //if functions comparing the current hour with id="hour-x" then sets the class
 if (dayHr===currentHr) {
 
