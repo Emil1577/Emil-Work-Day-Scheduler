@@ -2,7 +2,7 @@
 
 ## Decription
 
-This JavaScript Code Emil Work Day Scheduler.  You will be given 9 scheduling.  The timer will continue if your answer is correct. If incorrect answer or none is selected, the timer will reduce your time by 10 seconds. Your score will be based on the time remaining.  The more time left the higher your score is.  Your scores will appear after all questions are rendered and answered. You will be ask to enter your name.  If you make it to top 5 highest scores, your name will appear in the High Scores list.  High Scores list appear right after you enter your name.  Good luck and have fun!
+This JavaScript Code Emil Work Day Scheduler.  You will be given 9 per hour time slot to enter your schedule for specific time hour.  Click the "save" button on the right to save. Your saved schedules will be save until you delete them.  Deleting the content requires you to hit the "save" button too.  Each hour are designated with a background.  Gray for the past hour, Red for the current hour and green to the future hour.  I hope you enjoy this project. Good luck and have fun!
 
 Here is the link to my game.  Feel free to share with your friends and family.
 
