@@ -87,7 +87,7 @@ Here is the link to my game.  Feel free to share with your friends and family.
 
 ## How to use:
 
-The link of the webpage is: https://emil1577.github.io/Quiz-Project/
+The link of the webpage is: https://emil1577.github.io/Emil-Work-Day-Scheduler
 
     Step 1 :Welcome homepage.
     Step 2 :Go to the alloted text area on which time you wanted to save a schedule.  Click on the "save" button to save.  Each schedule has it's own button.  Make sure you are hitting the corresponding button.
